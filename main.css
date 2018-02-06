@@ -1,0 +1,8 @@
+body,p,a {font-family: 'Anonymous Pro', monospace;}
+		body, html {height: 100%}
+		.bgimg {
+			background-image: url('bg1.png');
+			min-height: 100%;
+			background-position: center;
+			background-size: cover;
+		}
