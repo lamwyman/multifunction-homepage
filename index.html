@@ -8,13 +8,15 @@ Github: @lamwyman,
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Home</title>
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+	<title>Homepage</title>
+	
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	
-	
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+
 	<script type="text/javascript" src="js/datetime.js"></script>
 	<script type="text/javascript" src="js/weather.js"></script>
 	<!--weather-->
@@ -29,26 +31,32 @@ Github: @lamwyman,
 
 <body onload="gettime()">
 	<div class="bgimg w3-display-container w3-text-white">
-		<div class="w3-display-middle w3-jumbo">
-			<div id="time"></div>
-			<p id="alert"></p>
+		<!-- Time -->
+		<div class="w3-display-middle">
+			<p id="time"></p>
+			<p id="date"></p>
 		</div>
-		<div class="w3-display-topleft w3-container w3-xlarge">
-			<p><a href="" target="_blank">Anchor 1</a></p>
-			<br/>
-		</div>
-		<div class="w3-display-bottomleft w3-container">
-			<p class="w3-xlarge" id=""></p>
-			<p class="w3-large" id="date"></p>
-		</div>
-		
-		<!--weather-->
-		<div class="w3-display-topright w3-container">
-			<div id="weather_text">loading</div>
+
+		<!-- Weather -->
+		<div class="w3-display-topleft w3-container">
+			<p id="weather_text">loading</p>
 			<script type="text/javascript">getweather();</script>
 		</div>
 
-		<div class="w3-display-bottomright w3-container">
+		<!-- temporary not using -->
+		<div class="">
+			<p class="" id=""></p>
+		</div>
+		
+		<!-- Setting Button -->
+		<div class="w3-display-topright w3-container w3-xlarge">
+			<Button class=""></Button>
+		</div>
+
+		<!-- Setting Panel -->
+
+		<!-- Todo list -->
+		<div class="">
 			<p></p>
 		</div>
 	</div>
