@@ -54,9 +54,15 @@ html {
 	
 }
 #quote{
-	position: fixed;
-    bottom: 2%;
-    left: 50%;
+	position: absolute;
+	margin: auto;
+    width: 50%;
+	color:#fff;
+	font-size: 0.8rem;
+	line-height: 0.8rem;
+	bottom: 0px;
+	left: 25%;
+	text-align: center;
 }
 @keyframes fadein {
 	from { opacity: 0; }
