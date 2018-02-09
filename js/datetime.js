@@ -1,4 +1,4 @@
-function startTime() {
+function gettime() {
 	var today = new Date();
 	var h = today.getHours();
 	var m = today.getMinutes();
@@ -18,7 +18,7 @@ function startTime() {
 	var date = curWeekDay+", "+curDay+" "+curMonth+" "+curYear;
 	document.getElementById("date").innerHTML = date;
 	
-	var t = setTimeout(startTime, 5);
+	var t = setTimeout(gettime, 5);
 }
 function checkTime(i) {
 	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
