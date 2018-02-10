@@ -4,91 +4,122 @@ body {
 	-o-background-size: cover;
 	background-size: cover;
 	background-position: center;
-	-webkit-animation: fadein 4s; /* Safari and Chrome */
-	-moz-animation: fadein 4s; /* Firefox */
-	-ms-animation: fadein 4s; /* Internet Explorer */
-	-o-animation: fadein 4s; /* Opera */
+	-webkit-animation: fadein 4s;
+	/* Safari and Chrome */
+	-moz-animation: fadein 4s;
+	/* Firefox */
+	-ms-animation: fadein 4s;
+	/* Internet Explorer */
+	-o-animation: fadein 4s;
+	/* Opera */
 	animation: fadein 4s;
-}
-
-body,
-p,
-a {
-	font-family: 'Anonymous Pro', monospace;
 }
 
 body,
 html {
 	height: 100%
 }
+
 #dateTime {
 	text-align: center;
-	color:#fff;
-    top: 50%;
-    left: 50%;
-	position:fixed;
-	transform: translate(-50%,-50%);
+	color: #fff;
+	top: 50%;
+	left: 50%;
+	position: fixed;
+	transform: translate(-50%, -50%);
 	font-size: 5rem;
 	font-weight: 600;
 }
-#date{
+
+#date {
 	font-size: 2rem;
 }
-#setting{
+
+#setting {
 	position: absolute;
-    top: 95%;
-    left: 2%;
-    color: #888;
+	top: 95%;
+	left: 2%;
+	color: #fff;
 }
-#weather{
+
+#weather {
 	position: absolute;
 	right: 2%;
-	top:2%;
-	color: #888;
+	top: 2%;
+	color: #fff;
 }
-#to-do-list{
+
+#to-do-list {
 	position: absolute;
-	top:95%;
+	top: 95%;
 	right: 2%;
-	color: #888;
-	
+	color: #fff;
 }
-#quote{
+
+#quote {
 	position: absolute;
 	margin: auto;
-    width: 50%;
-	color:#fff;
+	width: 50%;
+	color: #fff;
 	font-size: 0.8rem;
 	line-height: 0.8rem;
 	bottom: 0px;
 	left: 25%;
 	text-align: center;
 }
+
 @keyframes fadein {
-	from { opacity: 0; }
-	to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 /* Firefox */
+
 @-moz-keyframes fadein {
-	from { opacity: 0; }
-	to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 /* Safari and Chrome */
+
 @-webkit-keyframes fadein {
-	from { opacity: 0; }
-	to   { opacity: 1; }
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 /* Internet Explorer */
-@-ms-keyframes fadein {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}​
 
+@-ms-keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+​
 /* Opera */
+
 @-o-keyframes fadein {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}​
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+​
