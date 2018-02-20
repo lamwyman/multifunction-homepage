@@ -49,7 +49,7 @@ $(document).ready(function() {
      $('#weather_text').html("Temperature in " + city + " is " + data.query.results.channel.item.condition.temp + "°C");
     });
 
-	$.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+	$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
 		$("#quote").append(a[0].content + "<p>— " + a[0].title + "</p>")
 	  });
 	$('body').css('background-image', 'url('+"https://source.unsplash.com/"+screen.width+"x"+screen.height+')');
