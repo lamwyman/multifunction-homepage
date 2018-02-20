@@ -25,7 +25,7 @@ function checkTime(i) {
 function showGreetingMsg(name){
 	var today = new Date();
 	var hour = today.getHours();
-	var username = name;
+	
 	var msg;
 	if(hour>=0 && hour<12){
 		msg = "Good morning, ";
@@ -34,7 +34,7 @@ function showGreetingMsg(name){
 	}else if(hour>=18){
 		msg = "Good evening, ";
 	}
-	document.getElementById('greetmsg').innerHTML = msg + username;
+	document.getElementById('greetmsg').innerHTML = msg + name;
 }
 
 function getWeather(){
@@ -63,8 +63,8 @@ $(document).ready(function() {
 
 	var username = localStorage.getItem("username");
 	while(username==null || username=="null" || username == ""){
-		var name = prompt("Please enter your name", "");
-		localStorage.setItem("username", name);
+		var localname = prompt("Please enter your name", "");
+		localStorage.setItem("username", localname);
 		username = localStorage.getItem("username");
 	}
 	
