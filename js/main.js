@@ -2,11 +2,10 @@ function getTime() {
 	var today = new Date();
 	var h = today.getHours();
 	var m = today.getMinutes();
-	var s = today.getSeconds();
+	//var s = today.getSeconds();
 	h = checkTime(h);
 	m = checkTime(m);
 	//s = checkTime(s);
-	//document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
 	document.getElementById('time').innerHTML = h + ":" + m;
 
 	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -28,11 +27,11 @@ function showGreetingMsg(name){
 	var hour = today.getHours();
 	var username = name;
 	var msg;
-	if(hour>=0 && hour<=11){
+	if(hour>=0 && hour<12){
 		msg = "Good morning, ";
-	}else if(hour>=12 && hour<=18){
+	}else if(hour>=12 && hour<18){
 		msg = "Good afternoon, ";
-	}else {
+	}else if(hour>=18){
 		msg = "Good evening, ";
 	}
 	document.getElementById('greetmsg').innerHTML = msg + username;
@@ -58,31 +57,20 @@ function getBackground(){
 	$('body').css('background-image', 'url('+"https://source.unsplash.com/"+screen.width+"x"+screen.height+')');
 }
 
-function promptUserName(){
-    var node = document.createElement("input");
-    node.setAttribute("type", "text");
-    node.setAttribute("value", "What is your name?");
-    document.getElementById("time").appendChild(node);
-
-	var name = $('#time').val();
-	localStorage.setItem("username", name);
-}
-
-
 $(document).ready(function() {
+	//localStorage.removeItem("username"); //for testing
 	getBackground();
 
-	if(!localStorage.username){
-		promptUserName();
-	}else {
-		var name = localStorage.username;
+	var username = localStorage.getItem("username");
+	while(username==null || username=="null" || username == ""){
+		var name = prompt("Please enter your name", "");
+		localStorage.setItem("username", name);
+		username = localStorage.getItem("username");
 	}
-
-
+	
 	getWeather();
 	getQuote();
-
-	showGreetingMsg(name);
+	showGreetingMsg(username);
 	var t1 = setInterval(getTime, 500);
 	var t2 = setInterval(showGreetingMsg, 1000 * 60 * 1);
 	
