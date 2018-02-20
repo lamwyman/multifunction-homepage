@@ -1,4 +1,3 @@
-"use strict";
 function getTime() {
 	var today = new Date();
 	var h = today.getHours();
@@ -8,6 +7,7 @@ function getTime() {
 	m = checkTime(m);
 	s = checkTime(s);
 	document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+
 	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 	var curWeekDay = days[today.getDay()];
@@ -28,29 +28,41 @@ function showGreetingMsg(){
 	var username = "poor guy";
 	var msg;
 	if(hour>=0 && hour<=11){
-		msg = "Good Morning, ";
+		msg = "Good morning, ";
 	}else if(hour>=12 && hour<=18){
-		msg = "Good Afternoon, ";
+		msg = "Good afternoon, ";
 	}else {
-		msg = "Good Evening, ";
+		msg = "Good evening, ";
 	}
 	document.getElementById('greetmsg').innerHTML = msg + username;
 }
 
+function getWeather(){
+	var city = "Kowloon, HK"; //change city variable dynamically as required
+    var searchtext = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'"
+	
+	$.getJSON("https://query.yahooapis.com/v1/public/yql?q=" + searchtext + "&format=json").success(function(data){
+    	//console.log(data);
+    	$('#weather_text').html("Temperature in " + city + " is " + data.query.results.channel.item.condition.temp + "°C");
+    });
+}
+
+function getQuote(){
+	$.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
+		$("#quote").append(a[0].content + "<p>— " + a[0].title + "</p>")
+	});
+}
+
+function getBackground(){
+	$('body').css('background-image', 'url('+"https://source.unsplash.com/"+screen.width+"x"+screen.height+')');
+}
+
 $(document).ready(function() {
 	showGreetingMsg();
-	var t2 = setInterval(getTime, 500);
-	var t1 = setInterval(showGreetingMsg, 1000 * 60 * 60);
-	var city = "Kowloon, HK";
-    var searchtext = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'"
-    //change city variable dynamically as required
-    $.getJSON("https://query.yahooapis.com/v1/public/yql?q=" + searchtext + "&format=json").success(function(data){
-     console.log(data);
-     $('#weather_text').html("Temperature in " + city + " is " + data.query.results.channel.item.condition.temp + "°C");
-    });
-
-	$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=", function(a) {
-		$("#quote").append(a[0].content + "<p>— " + a[0].title + "</p>")
-	  });
-	$('body').css('background-image', 'url('+"https://source.unsplash.com/"+screen.width+"x"+screen.height+')');
+	var t1 = setInterval(getTime, 500);
+	var t2 = setInterval(showGreetingMsg, 1000 * 60 * 15);
+	
+	getWeather();
+	getQuote();
+	getBackground();
 });
