@@ -1,3 +1,4 @@
+"use strict";
 function getTime() {
 	var today = new Date();
 	var h = today.getHours();
