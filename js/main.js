@@ -5,8 +5,9 @@ function getTime() {
 	var s = today.getSeconds();
 	h = checkTime(h);
 	m = checkTime(m);
-	s = checkTime(s);
-	document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+	//s = checkTime(s);
+	//document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+	document.getElementById('time').innerHTML = h + ":" + m;
 
 	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -22,10 +23,10 @@ function checkTime(i) {
 	return i;
 }
 
-function showGreetingMsg(){
+function showGreetingMsg(name){
 	var today = new Date();
 	var hour = today.getHours();
-	var username = "poor guy";
+	var username = name;
 	var msg;
 	if(hour>=0 && hour<=11){
 		msg = "Good morning, ";
@@ -57,12 +58,32 @@ function getBackground(){
 	$('body').css('background-image', 'url('+"https://source.unsplash.com/"+screen.width+"x"+screen.height+')');
 }
 
+function promptUserName(){
+    var node = document.createElement("input");
+    node.setAttribute("type", "text");
+    node.setAttribute("value", "What is your name?");
+    document.getElementById("time").appendChild(node);
+
+	var name = $('#time').val();
+	localStorage.setItem("username", name);
+}
+
+
 $(document).ready(function() {
-	showGreetingMsg();
-	var t1 = setInterval(getTime, 500);
-	var t2 = setInterval(showGreetingMsg, 1000 * 60 * 15);
-	
+	getBackground();
+
+	if(!localStorage.username){
+		promptUserName();
+	}else {
+		var name = localStorage.username;
+	}
+
+
 	getWeather();
 	getQuote();
-	getBackground();
+
+	showGreetingMsg(name);
+	var t1 = setInterval(getTime, 500);
+	var t2 = setInterval(showGreetingMsg, 1000 * 60 * 1);
+	
 });
