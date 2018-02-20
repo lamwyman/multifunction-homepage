@@ -5,8 +5,7 @@ function getTime() {
 	var s = today.getSeconds();
 	h = checkTime(h);
 	m = checkTime(m);
-	s = checkTime(s);
-	document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+	document.getElementById('time').innerHTML = h + ":" + m;
 
 	var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	var days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
@@ -58,11 +57,10 @@ function getBackground(){
 }
 
 $(document).ready(function() {
+	getBackground();
 	showGreetingMsg();
 	var t1 = setInterval(getTime, 500);
 	var t2 = setInterval(showGreetingMsg, 1000 * 60 * 15);
-	
 	getWeather();
 	getQuote();
-	getBackground();
 });
