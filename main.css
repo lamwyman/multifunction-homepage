@@ -33,6 +33,14 @@ html {
 #bg-overlay {
 	background: rgba(0, 0, 0, 0.5);
 }
+<<<<<<< HEAD
+=======
+#name_input{
+	background-color: rgba(0,0,0,0.3); 
+	color: white; 
+	text-align: center;
+}
+>>>>>>> da0c4aea65bc7b388b703fe12f6dfb7d00460d53
 
 #dateTime {
 	text-align: center;
