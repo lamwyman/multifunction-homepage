@@ -51,16 +51,17 @@ function getWeather() {
 		var forecast = data.query.results.channel.item.forecast;
 
 		$('#weatherText').html(city + " " + temp + "°C" + " ");
-		$('#weatherText').append("<i class='wi wi-yahoo-"+code+"'></i>"); 
+		$('#weatherText').append("<i class='wi wi-yahoo-"+code+"'></i>");
 		//code api
 		//https://erikflowers.github.io/weather-icons/api-list.html
 
-		$('#wdhead').append("<i class='wi wi-yahoo-"+code+"'></i>"); 
-		$('#wdhead').append(data.query.results.channel.item.condition.text);
+		$('#wdhead').append("<i class='wi wi-yahoo-"+code+"'></i>" + data.query.results.channel.item.condition.text + " ");
+		$('#wdhead').append("<i class='wi wi-humidity'></i>" + data.query.results.channel.atmosphere.humidity);
+
 
 		var tmp = ["#wd1","#wd2","#wd3","#wd4","#wd5"];
 		for(var i=0;i<5; i++){
-			$(tmp[i]).append(forecast[i].day + "<br>");
+			$(tmp[i]).append(forecast[i].day + " " + "<i class='wi wi-yahoo-"+forecast[i].code+"'></i><br>");
 			$(tmp[i]).append("High: " + forecast[i].high + "°C" + "<br>");
 			$(tmp[i]).append("Low: " + forecast[i].low + "°C" + "<br>");
 		}
