@@ -27,9 +27,11 @@ html {
 }
 
 #search{
+	display: none;
 	font-size: 1.5rem;
 }
 #search_input,#name_input{
+	padding: 1rem;
 	background: none;
     border-bottom: white;
     border-bottom: solid #fff 2px;
@@ -49,7 +51,7 @@ html {
 	top: 50%;
 	left: 50%;
 	position: absolute;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -45%);
 	font-size: 8rem;
 	font-weight: 600;
 }

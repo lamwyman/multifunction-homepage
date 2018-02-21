@@ -70,7 +70,7 @@ function get_greeting_name(ele) {
 }
 
 $(document).ready(function () {
-	localStorage.removeItem("username"); //for testing
+	// localStorage.removeItem("username"); //for testing
 	getBackground();
 	getTime();
 	var t1 = setInterval(getTime, 1000 * 60 * 1);
@@ -80,6 +80,7 @@ $(document).ready(function () {
 	if (username == null || username == "null" || username == "") {
 		$("#greeting_name").fadeIn();
 	} else {
+		$("#search").fadeIn();
 		showGreetingMsg(username);
 		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
 	}
