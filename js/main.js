@@ -70,7 +70,7 @@ function get_greeting_name(ele) {
 }
 
 $(document).ready(function () {
-	//localStorage.removeItem("username"); //for testing
+	localStorage.removeItem("username"); //for testing
 	getBackground();
 	getTime();
 	var t1 = setInterval(getTime, 1000 * 60 * 1);
