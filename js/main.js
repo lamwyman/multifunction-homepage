@@ -89,8 +89,8 @@ $(document).ready(function () {
 
 $('#weather').click(function(){
 	if ($('#weatherDetail').is(':hidden')) {
-	   $('#weatherDetail').show('slide',{direction:'right'},500);
+	   $('#weatherDetail').show('slide',{direction:'right'},400);
 	} else {
-	   $('#weatherDetail').hide('slide',{direction:'right'},500);
+	   $('#weatherDetail').hide('slide',{direction:'right'},400);
 	}
 });
