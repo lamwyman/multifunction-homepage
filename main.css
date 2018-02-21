@@ -81,11 +81,11 @@ html {
 }
 
 #weatherDetail {
+	max-width: 100%;
 	margin-top: 50px;
 	margin-right: 2%;
 	color: white;
-	width: 60%;
-	padding: 0.5rem;
+	width: 28rem;
 	display: none;
 	background: rgba(0, 0, 0, 0.4);
 	z-index: 10;
@@ -101,11 +101,11 @@ html {
 }
 
 .wd {
-	font-size: 1rem;
-	padding-top: 0.5rem;
-	text-align: left;
-	width: 20%;
-	display: inline-block;
+	font-size: 0.7rem;
+    text-align: left;
+    width: 18%;
+    padding: 0.5rem;
+    display: inline-block;
 }
 
 #to-do-list {
