@@ -26,6 +26,19 @@ html {
 	font-size: 4rem;
 }
 
+form i{
+	font-size: 1.5rem;
+}
+#search{
+	background: none;
+    border-bottom: white;
+    border-bottom: solid #fff 2px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    font-size: 1.5rem;
+    color: #fff;
+}
 #greetmsg {
 	font-size: 2.5rem;
 }
