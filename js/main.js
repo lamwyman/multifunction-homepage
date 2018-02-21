@@ -59,19 +59,28 @@ function getBackground() {
 	$('body').css('background-image', 'url(' + "https://source.unsplash.com/" + screen.width + "x" + screen.height + ')');
 }
 
-$(document).ready(function () {
-	// localStorage.removeItem("username"); //for testing
-	getBackground();
-	username = localStorage.getItem("username");
-	if (username == null || username == "null" || username == "") {
-		var localname = prompt("Please enter your name", "");
-		localStorage.setItem("username", localname);
+function get_greeting_name(ele) {
+	if (event.key === 'Enter') {
+		localStorage.setItem("username", document.getElementById('name_input').value);
 		username = localStorage.getItem("username");
+		document.getElementById('greeting_name').remove();
+		showGreetingMsg(username);
+		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
 	}
+}
+
+$(document).ready(function () {
+	//localStorage.removeItem("username");//testing
+	getBackground();
 	getTime();
+	var t1 = setInterval(getTime, 1000 * 60 * 1);
 	getWeather();
 	getQuote();
-	showGreetingMsg(username);
-	var t1 = setInterval(getTime, 1000 * 60 * 1);
-	var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
+	username = localStorage.getItem("username");
+	if (username == null || username == "null" || username == "") {
+		$("#greeting_name").fadeIn();
+	} else {
+		showGreetingMsg(username);
+		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
+	}
 });
