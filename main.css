@@ -63,7 +63,7 @@ html {
 #setting {
 	position: absolute;
 	top: 95%;
-	left: 2%;
+	right: 2%;
 	color: #fff;
 }
 
@@ -72,12 +72,22 @@ html {
 	right: 2%;
 	top: 2%;
 	color: #fff;
+    cursor: pointer;
+}
+
+#weatherDetail {
+	color: white;
+    width: -50vw;
+    height: 200px;
+    display: none;
+	background: rgba(0, 0, 0, 0.3);
+	z-index: 10;
 }
 
 #to-do-list {
 	position: absolute;
 	top: 95%;
-	right: 2%;
+	left: 2%;
 	color: #fff;
 }
 
