@@ -41,11 +41,16 @@ function showGreetingMsg(name) {
 
 function getWeather() {
 	var city = "Kowloon, HK"; //change city variable dynamically as required
-	var searchtext = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'";
+	var searchtext = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'";
 
 	$.getJSON("https://query.yahooapis.com/v1/public/yql?q=" + searchtext + "&format=json").success(function (data) {
 		console.log(data);
-		$('#weather_text').html(city + " : " + data.query.results.channel.item.condition.temp + "°C");
+		$('#weatherText').html(city + " : " + data.query.results.channel.item.condition.temp + "°C");
+
+
+		$('#weatherDetail').html("sunrise: " + data.query.results.channel.astronomy.sunrise);
+		$('#weatherDetail').append("<br>");
+		$('#weatherDetail').append("sunset: " + data.query.results.channel.astronomy.sunset);
 	});
 }
 

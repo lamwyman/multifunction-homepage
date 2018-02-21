@@ -40,7 +40,8 @@ html {
     border-top: none;
     border-right: none;
     font-size: 1.5rem!important;
-    color: #fff;
+	color: #fff;
+	outline: none;
 }
 #greetmsg {
 	font-size: 2.5rem;
@@ -77,15 +78,14 @@ html {
 }
 
 #weatherDetail {
-	max-width: 200px;
+	margin-top: 3%;
 	color: white;
-    width: 10%;
+    width: 400px;
     height: 200px;
     display: none;
 	background: rgba(0, 0, 0, 0.3);
 	z-index: 10;
 	float: right;
-	
 }
 
 #to-do-list {
