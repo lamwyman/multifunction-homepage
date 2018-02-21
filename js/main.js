@@ -40,13 +40,19 @@ function showGreetingMsg(name) {
 }
 
 function getWeather() {
-	var city = "Kowloon, HK"; //change city variable dynamically as required
-	var searchtext = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'";
+	var location = "Kowloon, HK"; //change city variable dynamically as required
+	var searchtext = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "') and u='c'";
 
 	$.getJSON("https://query.yahooapis.com/v1/public/yql?q=" + searchtext + "&format=json").success(function (data) {
 		console.log(data);
-		$('#weatherText').html(city + " : " + data.query.results.channel.item.condition.temp + "°C");
+		var city = data.query.results.channel.location.city;
+		var temp = data.query.results.channel.item.condition.temp;
+		var code = data.query.results.channel.item.condition.code;
 
+		$('#weatherText').html(city + " " + temp + "°C" + " ");
+		$('#weatherText').append("<i class='wi wi-yahoo-"+code+"'></i>"); 
+		//code api
+		//https://erikflowers.github.io/weather-icons/api-list.html
 
 		$('#weatherDetail').html("sunrise: " + data.query.results.channel.astronomy.sunrise);
 		$('#weatherDetail').append("<br>");
