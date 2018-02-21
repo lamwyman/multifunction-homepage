@@ -64,6 +64,7 @@ function get_greeting_name(ele) {
 		localStorage.setItem("username", document.getElementById('name_input').value);
 		username = localStorage.getItem("username");
 		document.getElementById('greeting_name').remove();
+		$("#search").fadeIn();
 		showGreetingMsg(username);
 		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
 	}
