@@ -55,8 +55,8 @@ function getWeather() {
 		//code api
 		//https://erikflowers.github.io/weather-icons/api-list.html
 
-		$('#wdhead').append("<i class='wi wi-yahoo-"+code+"'></i>" + data.query.results.channel.item.condition.text + " ");
-		$('#wdhead').append("<i class='wi wi-humidity'></i>" + data.query.results.channel.atmosphere.humidity);
+		$('#wdhead').append("<i class='wi wi-yahoo-"+code+"'></i>" + data.query.results.channel.item.condition.text + "<br>");
+		$('#wdhead').append(data.query.results.channel.atmosphere.humidity+"<i class='wi wi-humidity'></i>");
 
 
 		var tmp = ["#wd1","#wd2","#wd3","#wd4","#wd5"];

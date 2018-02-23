@@ -97,15 +97,25 @@ html {
 	padding-bottom: 0.5rem;
 	text-align: center;
 	height: 50%;
+	min-height: 130px;
 	border-bottom: solid #fff 2px;
 }
 
 .wd {
 	font-size: 0.7rem;
     text-align: left;
-    width: 18%;
+    width: 19%;
     padding: 0.5rem;
     display: inline-block;
+}
+
+#close{
+    font-size: 1.5rem;
+    padding-right: 0.5rem;
+    text-align: right;
+    color: white;
+	cursor: pointer;
+	float: right;
 }
 
 #to-do-list {
