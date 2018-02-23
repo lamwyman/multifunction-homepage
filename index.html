@@ -12,12 +12,12 @@ Github: @lamwyman,
 	<header name="Access-Control-Allow-Origin" value="http://quotesondesign.com/" />
 	<title>Home</title>
 	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	    crossorigin="anonymous">
 </head>
 
 <body>
-	<div class="bg-overlay"></div>
 	<div id="dateTime">
 		<div id="time"></div>
 		<div id="date"></div>
@@ -25,8 +25,7 @@ Github: @lamwyman,
 		<div id="search">
 			<form action="http://www.google.com/search" class="searchform" method="get" name="searchform" target="_self">
 				<i class="fas fa-search"></i>
-				<input id="search_input" autocomplete="on" class="form-controls search" name="q" placeholder="" required="required"
-				    type="text">
+				<input id="search_input" autocomplete="on" class="form-controls search" name="q" placeholder="" required="required" type="text">
 			</form>
 		</div>
 		<div id="greeting_name">What is your name?
@@ -34,18 +33,32 @@ Github: @lamwyman,
 		</div>
 	</div>
 
+	<div id="weather">
+		<div id="weatherText">loading</div>
+	</div>
+
+	<div id="weatherDetail">
+		<div id="wdhead">
+			<span aria-hidden=“true” id="close" onclick="$('#weatherDetail').hide('slide',{direction:'right'},400);">&times;</span>
+		</div>
+		<div class="wd" id="wd1"></div>
+		<div class="wd" id="wd2"></div>
+		<div class="wd" id="wd3"></div>
+		<div class="wd" id="wd4"></div>
+		<div class="wd" id="wd5"></div>
+	</div>
+
 	<div id="to-do-list">
 		<i class="fas fa-list fa-lg"></i>
 	</div>
-	<div id="weather">
-		<p id="weather_text">loading</p>
-	</div>
+
 	<div id="setting">
 		<i class="fas fa-cog fa-lg"></i>
 	</div>
 	<div id="quote"></div>
 
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </body>

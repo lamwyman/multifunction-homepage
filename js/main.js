@@ -40,12 +40,32 @@ function showGreetingMsg(name) {
 }
 
 function getWeather() {
-	var city = "Kowloon, HK"; //change city variable dynamically as required
-	var searchtext = "select item.condition from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "') and u='c'"
+	var location = "Kowloon, HK"; //change city variable dynamically as required
+	var searchtext = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "') and u='c'";
 
 	$.getJSON("https://query.yahooapis.com/v1/public/yql?q=" + searchtext + "&format=json").success(function (data) {
-		//console.log(data);
-		$('#weather_text').html("Temperature in " + city + " is " + data.query.results.channel.item.condition.temp + "°C");
+		console.log(data);
+		var city = data.query.results.channel.location.city;
+		var temp = data.query.results.channel.item.condition.temp;
+		var code = data.query.results.channel.item.condition.code;
+		var forecast = data.query.results.channel.item.forecast;
+
+		$('#weatherText').html(city + " " + temp + "°C" + " ");
+		$('#weatherText').append("<i class='wi wi-yahoo-"+code+"'></i>");
+		//code api
+		//https://erikflowers.github.io/weather-icons/api-list.html
+
+		$('#wdhead').append("<i class='wi wi-yahoo-"+code+"'></i>" + data.query.results.channel.item.condition.text + "<br>");
+		$('#wdhead').append(data.query.results.channel.atmosphere.humidity+"<i class='wi wi-humidity'></i>");
+
+
+		var tmp = ["#wd1","#wd2","#wd3","#wd4","#wd5"];
+		for(var i=0;i<5; i++){
+			$(tmp[i]).append(forecast[i].day + " " + "<i class='wi wi-yahoo-"+forecast[i].code+"'></i><br>");
+			$(tmp[i]).append("High: " + forecast[i].high + "°C" + "<br>");
+			$(tmp[i]).append("Low: " + forecast[i].low + "°C" + "<br>");
+		}
+
 	});
 }
 
@@ -84,5 +104,13 @@ $(document).ready(function () {
 		$("#search").fadeIn();
 		showGreetingMsg(username);
 		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
+	}
+});
+
+$('#weather').click(function(){
+	if ($('#weatherDetail').is(':hidden')) {
+	   $('#weatherDetail').show('slide',{direction:'right'},400);
+	} else {
+	   $('#weatherDetail').hide('slide',{direction:'right'},400);
 	}
 });
