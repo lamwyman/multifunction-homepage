@@ -90,8 +90,81 @@ function get_greeting_name(ele) {
 	}
 }
 
+function get_list_item(){
+	//to-do: get list item from localstorage and createElement("li");
+}
+function add_to_do_item(ele) {
+	if (event.key === 'Enter') {
+		localStorage.setItem("username", document.getElementById('name_input').value);
+		username = localStorage.getItem("username");
+		document.getElementById('greeting_name').remove();
+		$("#search").fadeIn();
+		showGreetingMsg(username);
+		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
+	}
+	var li = document.createElement("li");
+	var inputValue = document.getElementById("myInput").value;
+	var t = document.createTextNode(inputValue);
+	li.appendChild(t);
+	if (inputValue === '') {
+		alert("You must write something!");
+	} else {
+		document.getElementById("myUL").appendChild(li);
+	}
+	document.getElementById("myInput").value = "";
+
+	var span = document.createElement("SPAN");
+	var txt = document.createTextNode("\u00D7");
+	span.className = "close";
+	span.appendChild(txt);
+	li.appendChild(span);
+
+	for (i = 0; i < close.length; i++) {
+		close[i].onclick = function () {
+			var div = this.parentElement;
+			div.style.display = "none";
+		}
+	}
+}
+
+function to_do_create_close_button() {
+	// Create a "close" button and append it to each list item
+	var myNodelist = document.getElementsByTagName("LI");
+	var i;
+	for (i = 0; i < myNodelist.length; i++) {
+		var span = document.createElement("SPAN");
+		var txt = document.createTextNode("\u00D7");
+		span.className = "close";
+		span.appendChild(txt);
+		myNodelist[i].appendChild(span);
+	}
+}
+
+function to_do_close_current_item(ele) {
+	// Click on a close button to hide the current list item
+	var close = document.getElementsByClassName("close");
+	var i;
+	for (i = 0; i < close.length; i++) {
+		close[i].onclick = function () {
+			var div = this.parentElement;
+			div.style.display = "none";
+		}
+	}
+}
+
+function to_do_item_checked(ele) {
+	// Add a "checked" symbol when clicking on a list item
+	var list = document.querySelector('ul');
+	list.addEventListener('click', function (ev) {
+		if (ev.target.tagName === 'LI') {
+			ev.target.classList.toggle('checked');
+		}
+	}, false);
+}
+
 $(document).ready(function () {
 	// localStorage.removeItem("username"); //for testing
+	to_do_create_close_button();
 	getBackground();
 	getTime();
 	var t1 = setInterval(getTime, 1000 * 60 * 1);
@@ -107,10 +180,14 @@ $(document).ready(function () {
 	}
 });
 
-$('#weather').click(function(){
+$('#weather').click(function () {
 	if ($('#weatherDetail').is(':hidden')) {
-	   $('#weatherDetail').show('slide',{direction:'right'},400);
+		$('#weatherDetail').show('slide', {
+			direction: 'right'
+		}, 400);
 	} else {
-	   $('#weatherDetail').hide('slide',{direction:'right'},400);
+		$('#weatherDetail').hide('slide', {
+			direction: 'right'
+		}, 400);
 	}
 });

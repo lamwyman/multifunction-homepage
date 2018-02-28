@@ -37,9 +37,9 @@ Github: @lamwyman,
 		<div id="weatherText">loading</div>
 	</div>
 
-	<div id="weatherDetail">
+<div id="weatherDetail">
 		<div id="wdhead">
-			<span aria-hidden=“true” id="close" onclick="$('#weatherDetail').hide('slide',{direction:'right'},400);">&times;</span>
+			<span aria-hidden="true" id="close" onclick="$('#weatherDetail').hide('slide',{direction:'right'},400);">&times;</span>
 		</div>
 		<div class="wd" id="wd1"></div>
 		<div class="wd" id="wd2"></div>
@@ -47,9 +47,14 @@ Github: @lamwyman,
 		<div class="wd" id="wd4"></div>
 		<div class="wd" id="wd5"></div>
 	</div>
-
 	<div id="to-do-list">
 		<i class="fas fa-list fa-lg"></i>
+	</div>
+
+	<div id="to-do-list-detail">
+		<input type="text" id="to_do_list_input" placeholder="Add..." onkeydown="add_to_do_item(this)">
+		<ul id="list_itself">
+		</ul>
 	</div>
 
 	<div id="setting">
