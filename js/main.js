@@ -24,7 +24,7 @@ function checkTime(i) {
 	return i;
 }
 
-function showGreetingMsg(name) {
+function showGreetingMsg(name) { console.log("called showGreetingMsg(x) on " + Date());
 	var today = new Date();
 	var hour = today.getHours();
 
@@ -39,7 +39,7 @@ function showGreetingMsg(name) {
 	document.getElementById('greetmsg').innerHTML = msg + name;
 }
 
-function getWeather() {
+function getWeather() { console.log("called getWeather() on " + Date());
 	var location = "Kowloon, HK"; //change city variable dynamically as required
 	var searchtext = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "') and u='c'";
 
@@ -86,7 +86,7 @@ function get_greeting_name(ele) {
 		document.getElementById('greeting_name').remove();
 		$("#search").fadeIn();
 		showGreetingMsg(username);
-		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
+		setInterval(function(){showGreetingMsg(username);}, 1000 * 60 * 60);
 	}
 }
 
@@ -100,7 +100,7 @@ function add_to_do_item(ele) {
 		document.getElementById('greeting_name').remove();
 		$("#search").fadeIn();
 		showGreetingMsg(username);
-		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
+		setInterval(showGreetingMsg(username), 1000 * 60 * 1);
 	}
 	var li = document.createElement("li");
 	var inputValue = document.getElementById("myInput").value;
@@ -169,6 +169,7 @@ $(document).ready(function () {
 	getTime();
 	var t1 = setInterval(getTime, 1000 * 60 * 1);
 	getWeather();
+	setInterval(getWeather, 1000 * 60 * 60);
 	getQuote();
 	username = localStorage.getItem("username");
 	if (username == null || username == "null" || username == "") {
@@ -176,7 +177,7 @@ $(document).ready(function () {
 	} else {
 		$("#search").fadeIn();
 		showGreetingMsg(username);
-		var t2 = setInterval(showGreetingMsg(username), 1000 * 60 * 1);
+		setInterval(function(){showGreetingMsg(username);}, 1000 * 60 * 60);
 	}
 });
 
