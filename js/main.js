@@ -114,14 +114,14 @@ $(document).ready(function () {
   }
 });
 
-$('#to-do-list').click(function(){
+$('#to-do-list').click(function () {
   if ($('#to-do-list-detail').is(':hidden')) {
     $('#to-do-list-detail').show('slide', {
-      direction: 'down'
+      direction: 'left'
     }, 400);
   } else {
     $('#to-do-list-detail').hide('slide', {
-      direction: 'down'
+      direction: 'left'
     }, 400);
   }
 });
@@ -187,17 +187,17 @@ var createNewTaskElement = function (taskString) {
 
 var addTask = function (ele) {
   if (event.key === 'Enter' && ele.value != "") {
-   
-  console.log("Add Task...");
-  
-  //Create a new list item with the text from the #new-task:
-  var listItem = createNewTaskElement(taskInput.value);
 
-  //Append listItem to incompleteTaskHolder
-  incompleteTaskHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskCompleted);
+    console.log("Add Task...");
 
-  taskInput.value = "";
+    //Create a new list item with the text from the #new-task:
+    var listItem = createNewTaskElement(taskInput.value);
+
+    //Append listItem to incompleteTaskHolder
+    incompleteTaskHolder.appendChild(listItem);
+    bindTaskEvents(listItem, taskCompleted);
+
+    taskInput.value = "";
   }
 }
 

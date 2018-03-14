@@ -14,12 +14,13 @@ Github: @lamwyman,
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" type="text/css" href="css/weather-icons.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	    crossorigin="anonymous">
+	 crossorigin="anonymous">
 </head>
 <script type="text/javascript">
 	// Notice how this gets configured before we load Font Awesome
 	window.FontAwesomeConfig = { autoReplaceSvg: true }
-  </script>
+</script>
+
 <body>
 	<div id="dateTime">
 		<div id="time"></div>
@@ -40,7 +41,7 @@ Github: @lamwyman,
 		<div id="weatherText">loading</div>
 	</div>
 
-<div id="weatherDetail">
+	<div id="weatherDetail">
 		<div id="wdhead">
 			<span aria-hidden="true" id="close" onclick="$('#weatherDetail').hide('slide',{direction:'right'},400);">&times;</span>
 		</div>
@@ -56,11 +57,14 @@ Github: @lamwyman,
 
 	<div id="to-do-list-detail">
 		<div class="container">
+			<span aria-hidden="true" id="close" onclick="$('#to-do-list-detail').hide('slide',{direction:'left'},400);">&times;</span>
+			<br>
 			<p>
-			  <label for="new-task" style="padding-top: 1rem;">Add Item</label><input id="new-task" type="text" placeholder="Add new task here..." onkeydown="addTask(this)">
+				<label for="new-task" style="padding-top: 1rem;">Add Item</label>
+				<input id="new-task" type="text" placeholder="Add new task here..." onkeydown="addTask(this)">
 			</p>
-			
-			<h3 style="    color: #fff;
+
+			<h3 style="color: #fff;
 			font-weight: 700;
 			font-size: 15px;
 			border-bottom: 2px solid #fff;
@@ -69,8 +73,8 @@ Github: @lamwyman,
 			text-transform: uppercase;">Todo</h3>
 			<ul id="incomplete-tasks">
 			</ul>
-			
-			<h3 style="    color: #fff;
+
+			<h3 style="color: #fff;
 			font-weight: 700;
 			font-size: 15px;
 			border-bottom: 2px solid #fff;
@@ -79,7 +83,7 @@ Github: @lamwyman,
 			text-transform: uppercase;">Completed</h3>
 			<ul id="completed-tasks">
 			</ul>
-		  </div>	  
+		</div>
 	</div>
 
 	<div id="setting">

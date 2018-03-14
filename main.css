@@ -83,7 +83,7 @@ html {
 
 #to-do-list-detail {
 	display: block;
-	bottom: 4%;
+	bottom: 4.5%;
 	left: 2%;
 	position: absolute;
 }
@@ -129,6 +129,7 @@ html {
 	top: 95%;
 	left: 2%;
 	color: #fff;
+	cursor: pointer;
 }
 
 #quote {
