@@ -16,7 +16,10 @@ Github: @lamwyman,
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	    crossorigin="anonymous">
 </head>
-
+<script type="text/javascript">
+	// Notice how this gets configured before we load Font Awesome
+	window.FontAwesomeConfig = { autoReplaceSvg: true }
+  </script>
 <body>
 	<div id="dateTime">
 		<div id="time"></div>
@@ -57,14 +60,26 @@ Github: @lamwyman,
 			  <label for="new-task" style="padding-top: 1rem;">Add Item<i class="fas fa-arrow-down" style="float:right;"></i></label><input id="new-task" type="text" placeholder="Add new task here..."><button><i class="fas fa-plus"></i></button>
 			</p>
 			
-			<h3>Todo</h3>
+			<h3 style="    color: #fff;
+			font-weight: 700;
+			font-size: 15px;
+			border-bottom: 2px solid #fff;
+			padding: 10px;
+			margin: 0;
+			text-transform: uppercase;">Todo</h3>
 			<ul id="incomplete-tasks">
 			  <li><input type="checkbox"><label>Pay Bills</label><input type="text"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="far fa-trash-alt"></i></button></li>
 			  <li class="editMode"><input type="checkbox"><label>Go Shopping</label><input type="text" value="Go Shopping"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="far fa-trash-alt"></i></button></li>
 			  
 			</ul>
 			
-			<h3>Completed</h3>
+			<h3 style="    color: #fff;
+			font-weight: 700;
+			font-size: 15px;
+			border-bottom: 2px solid #fff;
+			padding: 10px;
+			margin: 0;
+			text-transform: uppercase;">Completed</h3>
 			<ul id="completed-tasks">
 			  <li><input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="far fa-trash-alt"></i></button></li>
 			</ul>

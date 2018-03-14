@@ -81,7 +81,10 @@ html {
 }
 
 #to-do-list-detail{
-	display: none;
+	display: block;
+    bottom: 4%;
+    left: 2%;
+    position: absolute;
 }
 #weatherDetail {
 	max-width: 100%;
@@ -234,6 +237,7 @@ html {
 	line-height: 40px;
 	width: 237px;
 	padding: 0 0 0 11px;
+	color: #888;
   }
   li >  input[type="text"] {
 	width: 226px;
