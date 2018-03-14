@@ -20,6 +20,7 @@ body,
 html {
 	height: 100%;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 #greeting_name {
@@ -80,12 +81,13 @@ html {
 	cursor: pointer;
 }
 
-#to-do-list-detail{
+#to-do-list-detail {
 	display: block;
-    bottom: 4%;
-    left: 2%;
-    position: absolute;
+	bottom: 4%;
+	left: 2%;
+	position: absolute;
 }
+
 #weatherDetail {
 	max-width: 100%;
 	margin-top: 50px;
@@ -107,17 +109,17 @@ html {
 
 .wd {
 	font-size: 0.7rem;
-    text-align: left;
-    width: 19%;
-    padding: 0.5rem;
-    display: inline-block;
+	text-align: left;
+	width: 19%;
+	padding: 0.5rem;
+	display: inline-block;
 }
 
-#close{
-    font-size: 1.5rem;
-    padding-right: 0.5rem;
-    text-align: right;
-    color: white;
+#close {
+	font-size: 1.5rem;
+	padding-right: 0.5rem;
+	text-align: right;
+	color: white;
 	cursor: pointer;
 	float: right;
 }
@@ -141,129 +143,148 @@ html {
 	text-align: center;
 }
 
-
 .container {
-	background-color:rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.7);
 	display: block;
 	max-width: 450px;
 	width: 100%;
 	margin: 100px auto 0;
-  }
-  ul {
+}
+
+ul {
 	margin: 0;
 	padding: 0;
-  }
-  li * {
+}
+
+li * {
 	float: left;
-  }
-  li, h3 {
-	clear:both;
-	list-style:none;
-  }
-  input, button {
+}
+
+li,
+h3 {
+	clear: both;
+	list-style: none;
+}
+
+input,
+button {
 	outline: none;
-  }
-  button {
+}
+
+button {
 	background: none;
 	float: right;
 	border: 0px;
 	color: #888;
 	font-size: 15px;
-	width: 40px;
+	width: 50px;
 	margin: 10px 0 0;
 	font-family: Lato, sans-serif;
 	cursor: pointer;
-  }
-  button:hover {
+}
+
+button:hover {
 	color: #fff;
-  }
-  /* Heading */
-  h3,
-  label[for='new-task'] {
+}
+
+/* Heading */
+
+h3,
+label[for='new-task'] {
 	color: #fff;
 	font-weight: 700;
 	font-size: 15px;
 	border-bottom: 2px solid #fff;
-	padding:10px;
+	padding: 10px;
 	margin: 0;
 	text-transform: uppercase;
-  }
-  input[type="text"] {
+}
+
+input[type="text"] {
 	margin: 0;
-	
 	font-size: 18px;
 	line-height: 18px;
 	height: 18px;
 	padding: 10px;
 	border: 0;
-	  
 	background: #fff;
 	background: transparent;
-  
 	font-family: Lato, sans-serif;
 	color: #888;
-  }
-  
-  input[type="text"]:focus {
+}
+
+input[type="text"]:focus {
 	color: #fff;
-	border-bottom: 3px solid #fff;
-  }
-  
-  /* New Task */
-  label[for='new-task'] {
+	/* border-bottom: 3px solid #fff; */
+}
+
+/* New Task */
+
+label[for='new-task'] {
 	display: block;
 	margin: 0 0 20px;
-  }
-  input#new-task {
+}
+
+input#new-task {
 	float: left;
 	width: 318px;
-  }
-  p > button:hover {
+}
+
+p>button:hover {
 	color: #0FC57C;
-  }
-  
-  /* Task list */
-  li {
+}
+
+/* Task list */
+
+li {
 	overflow: hidden;
-	padding: 15px 0;
-  }
-  li > input[type="checkbox"] {
+	padding: 0;
+	margin: 10px 0;
+}
+
+li>input[type="checkbox"] {
 	margin: 0 10px;
 	position: relative;
 	top: 15px;
-  }
-  li > label {
+}
+
+li>label {
 	font-size: 18px;
 	line-height: 40px;
 	width: 237px;
 	padding: 0 0 0 11px;
 	color: #888;
-  }
-  li >  input[type="text"] {
+}
+
+li>input[type="text"] {
 	width: 226px;
-  }
-  li > .delete:hover {
+}
+
+li>.delete:hover {
 	color: #CF2323;
-  }
-  
-  /* Completed */
-  #completed-tasks label {
+}
+
+/* Completed */
+
+#completed-tasks label {
 	text-decoration: line-through;
 	color: #888;
-  }
-  
-  /* Edit Task */
-  ul li input[type=text] {
-	display:none;
-  }
-  
-  ul li.editMode input[type=text] {
-	display:block;
-  }
-  
-  ul li.editMode label {
-	display:none;
-  }
+}
+
+/* Edit Task */
+
+ul li input[type=text] {
+	display: none;
+}
+
+ul li.editMode input[type=text] {
+	display: block;
+}
+
+ul li.editMode label {
+	display: none;
+}
+
 @media only screen and (min-width: 601px) {}
 
 @media only screen and (min-width: 993px) {}

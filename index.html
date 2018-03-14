@@ -57,7 +57,7 @@ Github: @lamwyman,
 	<div id="to-do-list-detail">
 		<div class="container">
 			<p>
-			  <label for="new-task" style="padding-top: 1rem;">Add Item<i class="fas fa-arrow-down" style="float:right;"></i></label><input id="new-task" type="text" placeholder="Add new task here..."><button><i class="fas fa-plus"></i></button>
+			  <label for="new-task" style="padding-top: 1rem;">Add Item</label><input id="new-task" type="text" placeholder="Add new task here..." onkeydown="addTask(this)">
 			</p>
 			
 			<h3 style="    color: #fff;
@@ -68,9 +68,6 @@ Github: @lamwyman,
 			margin: 0;
 			text-transform: uppercase;">Todo</h3>
 			<ul id="incomplete-tasks">
-			  <li><input type="checkbox"><label>Pay Bills</label><input type="text"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="far fa-trash-alt"></i></button></li>
-			  <li class="editMode"><input type="checkbox"><label>Go Shopping</label><input type="text" value="Go Shopping"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="far fa-trash-alt"></i></button></li>
-			  
 			</ul>
 			
 			<h3 style="    color: #fff;
@@ -81,7 +78,6 @@ Github: @lamwyman,
 			margin: 0;
 			text-transform: uppercase;">Completed</h3>
 			<ul id="completed-tasks">
-			  <li><input type="checkbox" checked><label>See the Doctor</label><input type="text"><button class="edit"><i class="fas fa-edit"></i></button><button class="delete"><i class="far fa-trash-alt"></i></button></li>
 			</ul>
 		  </div>	  
 	</div>
