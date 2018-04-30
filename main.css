@@ -81,13 +81,6 @@ html {
 	cursor: pointer;
 }
 
-#to-do-list-detail {
-	display: block;
-	bottom: 4.5%;
-	left: 2%;
-	position: absolute;
-}
-
 #weatherDetail {
 	max-width: 100%;
 	margin-top: 50px;
@@ -144,147 +137,54 @@ html {
 	text-align: center;
 }
 
-.container {
-	background-color: rgba(0, 0, 0, 0.7);
+#to-do-list-detail {
+	background-color:rgba(0, 0, 0, 0.7);
 	display: block;
-	max-width: 450px;
+	width: 300px;
+	bottom: 5.5%;
+	left: 2%;
+	position: absolute;
+}
+
+#to-do-content {
+	display: block;
 	width: 100%;
-	margin: 100px auto 0;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
+ul{
+	list-style-type: none;
+	color: white;
+	padding-left: 15px;
+	margin-bottom: 0px !important;
 }
 
-li * {
-	float: left;
+li{
+	display: inline-block;
+	padding-left: 5px;
+	width: 95%;
 }
 
-li,
-h3 {
-	clear: both;
-	list-style: none;
-}
-
-input,
-button {
-	outline: none;
-}
-
-button {
-	background: none;
-	float: right;
-	border: 0px;
-	color: #888;
-	font-size: 15px;
-	width: 50px;
-	margin: 10px 0 0;
-	font-family: Lato, sans-serif;
-	cursor: pointer;
-}
-
-button:hover {
-	color: #fff;
-}
-
-/* Heading */
-
-h3,
-label[for='new-task'] {
-	color: #fff;
-	font-weight: 700;
-	font-size: 15px;
-	border-bottom: 2px solid #fff;
-	padding: 10px;
-	margin: 0;
-	text-transform: uppercase;
-}
-
-input[type="text"] {
-	margin: 0;
-	font-size: 18px;
-	line-height: 18px;
-	height: 18px;
-	padding: 10px;
-	border: 0;
-	background: #fff;
-	background: transparent;
-	font-family: Lato, sans-serif;
-	color: #888;
-}
-
-input[type="text"]:focus {
-	color: #fff;
-	/* border-bottom: 3px solid #fff; */
-}
-
-/* New Task */
-
-label[for='new-task'] {
-	display: block;
-	margin: 0 0 20px;
-}
-
-input#new-task {
-	float: left;
-	width: 318px;
-}
-
-p>button:hover {
-	color: #0FC57C;
-}
-
-/* Task list */
-
-li {
-	overflow: hidden;
-	padding: 0;
-	margin: 10px 0;
-}
-
-li>input[type="checkbox"] {
-	margin: 0 10px;
-	position: relative;
-	top: 15px;
-}
-
-li>label {
-	font-size: 18px;
-	line-height: 40px;
-	width: 237px;
-	padding: 0 0 0 11px;
-	color: #888;
-}
-
-li>input[type="text"] {
-	width: 226px;
-}
-
-li>.delete:hover {
-	color: #CF2323;
-}
-
-/* Completed */
-
-#completed-tasks label {
+.finishedTodo{
 	text-decoration: line-through;
-	color: #888;
+	color: grey;
 }
 
-/* Edit Task */
-
-ul li input[type=text] {
-	display: none;
+input[type='checkbox']{
+	/*display: inline-block;*/
 }
 
-ul li.editMode input[type=text] {
-	display: block;
+#add{
+	background: transparent;
+	border-bottom: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+	outline: none;
+	color: white;
+	padding: 10px 15px 12px;
+	width: 100%;
 }
 
-ul li.editMode label {
-	display: none;
-}
 
 @media only screen and (min-width: 601px) {}
 

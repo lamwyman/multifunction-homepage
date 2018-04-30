@@ -56,33 +56,15 @@ Github: @lamwyman,
 	</div>
 
 	<div id="to-do-list-detail">
-		<div class="container">
+		<div id="to-do-content">
+			<!--
 			<span aria-hidden="true" id="close" onclick="$('#to-do-list-detail').hide('slide',{direction:'left'},400);">&times;</span>
-			<br>
-			<p>
-				<label for="new-task" style="padding-top: 1rem;">Add Item</label>
-				<input id="new-task" type="text" placeholder="Add new task here..." onkeydown="addTask(this)">
-			</p>
+			-->
+				
+			<!-- display tasks arr -->
+			<ul id="todoList"></ul>
 
-			<h3 style="color: #fff;
-			font-weight: 700;
-			font-size: 15px;
-			border-bottom: 2px solid #fff;
-			padding: 10px;
-			margin: 0;
-			text-transform: uppercase;">Todo</h3>
-			<ul id="incomplete-tasks">
-			</ul>
-
-			<h3 style="color: #fff;
-			font-weight: 700;
-			font-size: 15px;
-			border-bottom: 2px solid #fff;
-			padding: 10px;
-			margin: 0;
-			text-transform: uppercase;">Completed</h3>
-			<ul id="completed-tasks">
-			</ul>
+			<input type="text" id="add" placeholder="New task" onkeyup="addTodo(event)"></input>
 		</div>
 	</div>
 
