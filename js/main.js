@@ -40,7 +40,7 @@ function showGreetingMsg(name) {
   document.getElementById('greetmsg').innerHTML = msg + name;
 }
 
-function clearWeather(){
+function clearWeather() {
   document.getElementById("weatherText").innerHTML = "";
   document.getElementById("wdhead").innerHTML = "<span aria-hidden='true' id='close' onclick='$('#weatherDetail').hide('slide',{direction:'right'},400);'>&times;</span>";
   document.getElementById("wd1").innerHTML = "";
@@ -74,9 +74,9 @@ function getWeather() {
 
     var tmp = ["#wd1", "#wd2", "#wd3", "#wd4", "#wd5"];
     for (var i = 0; i < 5; i++) {
-      $(tmp[i]).append(forecast[i+1].day + " " + "<i class='wi wi-yahoo-" + forecast[i+1].code + "'></i><br>");
-      $(tmp[i]).append("High: " + forecast[i+1].high + "°C" + "<br>");
-      $(tmp[i]).append("Low: " + forecast[i+1].low + "°C" + "<br>");
+      $(tmp[i]).append(forecast[i + 1].day + " " + "<i class='wi wi-yahoo-" + forecast[i + 1].code + "'></i><br>");
+      $(tmp[i]).append("High: " + forecast[i + 1].high + "°C" + "<br>");
+      $(tmp[i]).append("Low: " + forecast[i + 1].low + "°C" + "<br>");
     }
 
   });
